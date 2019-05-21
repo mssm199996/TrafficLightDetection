@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainStageController">
+   <top>
+      <ToolBar BorderPane.alignment="CENTER">
+         <items>
+            <JFXButton onAction="#loadImage" text="Charger une image">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@load.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <Separator orientation="VERTICAL" />
+            <JFXButton onAction="#loadGreenCascade" text="Charger GreenCascade">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@green.png" />
+                     </image>
+                     <effect>
+                        <Reflection topOpacity="0.2" />
+                     </effect>
+                  </ImageView>
+               </graphic></JFXButton>
+            <Separator layoutX="132.0" layoutY="10.0" orientation="VERTICAL" />
+            <JFXButton layoutX="142.0" layoutY="10.0" onAction="#loadRedCascade" text="Charger RedCascade">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@red.png" />
+                     </image>
+                     <effect>
+                        <Reflection topOpacity="0.2" />
+                     </effect>
+                  </ImageView>
+               </graphic></JFXButton>
+            <Separator layoutX="132.0" layoutY="10.0" orientation="VERTICAL" />
+            <JFXButton layoutX="142.0" layoutY="10.0" onAction="#loadYellowCascade" text="Charger YellowCascade">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@orange.png" />
+                     </image>
+                     <effect>
+                        <Reflection topOpacity="0.2" />
+                     </effect>
+                  </ImageView>
+               </graphic></JFXButton>
+         </items>
+      </ToolBar>
+   </top>
+   <right>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+               <items>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <ImageView fx:id="withBlurTrafficLightImage" fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                        </ImageView>
+                     </center>
+                     <top>
+                        <Label text="Traitement avec filtre median" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <effect>
+                              <Reflection topOpacity="0.2" />
+                           </effect>
+                        </Label>
+                     </top>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <ImageView fx:id="withoutBlurTrafficLightImage" fitHeight="480.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                        </ImageView>
+                     </center>
+                     <top>
+                        <Label text="Traitement sans filtre median" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <effect>
+                              <Reflection topOpacity="0.2" />
+                           </effect>
+                        </Label>
+                     </top>
+                  </BorderPane>
+               </items>
+            </SplitPane>
+         </center>
+         <top>
+            <VBox spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane>
+                     <center>
+                        <JFXTextField fx:id="greenCascadePath" labelFloat="true" promptText="Fichier GreenCascade">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                        </JFXTextField>
+                     </center>
+                     <left>
+                        <ImageView pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <image>
+                              <Image url="@green.png" />
+                           </image>
+                           <BorderPane.margin>
+                              <Insets right="5.0" />
+                           </BorderPane.margin>
+                           <effect>
+                              <Reflection topOpacity="0.2" />
+                           </effect>
+                        </ImageView>
+                     </left>
+                  </BorderPane>
+                  <BorderPane>
+                     <center>
+                        <JFXTextField fx:id="redCascadePath" labelFloat="true" promptText="Fichier RedCascade">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                        </JFXTextField>
+                     </center>
+                     <left>
+                        <ImageView pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <image>
+                              <Image url="@red.png" />
+                           </image>
+                           <BorderPane.margin>
+                              <Insets right="5.0" />
+                           </BorderPane.margin>
+                           <effect>
+                              <Reflection topOpacity="0.2" />
+                           </effect>
+                        </ImageView>
+                     </left>
+                  </BorderPane>
+                  <BorderPane>
+                     <center>
+                        <JFXTextField fx:id="yellowCascadePath" labelFloat="true" promptText="Fichier YellowCascade">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                        </JFXTextField>
+                     </center>
+                     <left>
+                        <ImageView pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets right="5.0" />
+                           </BorderPane.margin>
+                           <image>
+                              <Image url="@orange.png" />
+                           </image>
+                           <effect>
+                              <Reflection topOpacity="0.2" />
+                           </effect>
+                        </ImageView>
+                     </left>
+                  </BorderPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+            </VBox>
+         </top>
+      </BorderPane>
+   </right>
+</BorderPane>
